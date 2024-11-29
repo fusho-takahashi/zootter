@@ -1,0 +1,26 @@
+@use "@angular/material" as mat;
+
+:host {
+  display: block;
+  padding: 16px;
+  @include mat.card-overrides(
+    (
+      subtitle-text-color: var(--mat-sys-on-primary),
+    )
+  );
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--mat-sys-primary-container),
+      filled-label-text-color: var(--mat-sys-on-primary-container),
+    )
+  );
+}
+
+mat-card {
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+
+  a {
+    width: 100%;
+  }
+}
