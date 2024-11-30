@@ -14,6 +14,6 @@ export class LoginUsecase {
     // Simulate a login request
     await new Promise((resolve) => setTimeout(resolve, 1000));
     this.authStore.setAnimal(animalId);
-    // this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home');
   }
 }
