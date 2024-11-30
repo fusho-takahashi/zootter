@@ -26,10 +26,9 @@ export class LoginComponent implements OnInit {
   selectedAnimalId = signal<string[]>([]);
 
   canLogin = computed(() => this.selectedAnimalId().length > 0);
-  isLoggingIn = computed(() => this.store.state.loginLoading());
-
-  animals = computed(() => this.store.state.animals());
-  isAnimalsLoading = computed(() => this.store.state.animalLoading());
+  isLoggingIn = this.store.state.loginLoading;
+  animals = this.store.state.animals;
+  isAnimalsLoading = this.store.state.animalLoading;
 
   ngOnInit() {
     this.usecases.init.execute();
