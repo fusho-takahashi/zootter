@@ -1,1 +1,8 @@
 <app-hero-header />
+@if (!isLoading()) {
+  @for (animal of animals(); track animal.id) {
+    <p>{{ animal.name }}</p>
+  }
+} @else {
+  <p>{{ "Loading..." }}</p>
+}
