@@ -8,9 +8,9 @@ export class InitUsecase {
   private readonly store = inject(LoginStore);
 
   async execute(): Promise<void> {
-    this.store.incrementProcessCount();
+    this.store.animalLoadingStart();
     const res = await lastValueFrom(animalApi.getAnimals());
     this.store.setAnimals(res.animals);
-    this.store.decrementProcessCount();
+    this.store.animalLoadingEnd();
   }
 }

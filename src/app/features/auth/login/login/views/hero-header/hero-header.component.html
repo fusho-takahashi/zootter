@@ -6,6 +6,12 @@
     ></mat-card-header
   >
   <mat-card-actions>
-    <a mat-flat-button>ログイン</a>
+    <button mat-flat-button [disabled]="!canLogin()" (click)="login.emit()">
+      @if (isLoading()) {
+        <mat-spinner diameter="20"></mat-spinner>
+      } @else {
+        ログイン
+      }
+    </button>
   </mat-card-actions>
 </mat-card>

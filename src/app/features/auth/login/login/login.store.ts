@@ -1,22 +1,27 @@
-import { computed, effect, Injectable, signal } from '@angular/core';
-import { Animal } from '../../../../domain/models/animal';
+import { Injectable, signal } from '@angular/core';
+
+export interface Animal {
+  id: string;
+  name: string;
+}
 
 @Injectable()
 export class LoginStore {
   private animals = signal<Animal[]>([]);
-  private processCount = signal<number>(0);
-
-  constructor() {
-    effect(() => console.log('animals:', this.animals()));
-  }
+  private animalLoading = signal<boolean>(false);
+  private loginLoading = signal<boolean>(false);
 
   setAnimals = (animals: Animal[]) => this.animals.set(animals);
 
-  incrementProcessCount = () => this.processCount.update((count) => count + 1);
-  decrementProcessCount = () => this.processCount.update((count) => (count > 0 ? count - 1 : 0));
+  animalLoadingStart = () => this.animalLoading.set(true);
+  animalLoadingEnd = () => this.animalLoading.set(false);
+
+  loginLoadingStart = () => this.loginLoading.set(true);
+  loginLoadingEnd = () => this.loginLoading.set(false);
 
   state = {
     animals: this.animals.asReadonly(),
-    processing: computed(() => this.processCount() > 0),
+    animalLoading: this.animalLoading.asReadonly(),
+    loginLoading: this.loginLoading.asReadonly(),
   };
 }

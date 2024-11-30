@@ -1,3 +1,10 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+app-animal-select {
+  flex: 1;
+  overflow: auto;
 }

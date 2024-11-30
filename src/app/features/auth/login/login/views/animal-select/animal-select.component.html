@@ -1,0 +1,26 @@
+<form #form="ngForm">
+  <mat-selection-list
+    [multiple]="false"
+    [(ngModel)]="selectedAnimalId"
+    name="animal"
+  >
+    <h2 mat-subheader>どの動物になる？</h2>
+    @if (isLoading()) {
+      <div class="loading">
+        <mat-spinner />
+      </div>
+    } @else {
+      @for (animal of animals(); track animal.id) {
+        <mat-list-option [value]="animal.id">
+          <img
+            matListItemAvatar
+            src="/img/animals/{{ animal.id }}.webp"
+            alt="{{ animal.name }}"
+          />
+          <h3 matListItemTitle>{{ animal.name }}</h3>
+          <p matListItemLine>&#64;{{ animal.id }}</p>
+        </mat-list-option>
+      }
+    }
+  </mat-selection-list>
+</form>

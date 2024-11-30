@@ -1,8 +1,8 @@
-export interface Animal {
+export interface GetAnimalsResponseAnimal {
   id: string;
   name: string;
 }
 
 export interface GetAnimalsResponse {
-  animals: Animal[];
+  animals: GetAnimalsResponseAnimal[];
 }

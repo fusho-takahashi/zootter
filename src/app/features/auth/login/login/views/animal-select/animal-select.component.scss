@@ -1,0 +1,22 @@
+@use "@angular/material" as mat;
+
+:host {
+  display: block;
+  background-color: var(--mat-sys-surface);
+  @include mat.list-overrides(
+    (
+      list-item-leading-avatar-color: var(--mat-sys-surface),
+    )
+  );
+}
+
+h2 {
+  font: var(--mat-sys-headline);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

@@ -1,8 +1,10 @@
-<app-hero-header />
-@if (!isLoading()) {
-  @for (animal of animals(); track animal.id) {
-    <p>{{ animal.name }}</p>
-  }
-} @else {
-  <p>{{ "Loading..." }}</p>
-}
+<app-hero-header
+  [canLogin]="canLogin()"
+  [isLoading]="isLoggingIn()"
+  (login)="login()"
+/>
+<app-animal-select
+  [animals]="animals()"
+  [isLoading]="isAnimalsLoading()"
+  [(selectedAnimalId)]="selectedAnimalId"
+/>

@@ -1,6 +1,6 @@
-import { Animal } from '../../domain/models/animal';
+import { GetAnimalsResponseAnimal } from '../../domain/models/animal';
 
-export const animals: Animal[] = [
+export const animals: GetAnimalsResponseAnimal[] = [
   {
     id: 'araiguma',
     name: 'アライグマ',
