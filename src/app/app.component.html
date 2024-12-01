@@ -1,1 +1,8 @@
-<router-outlet />
+@if (isLoggedIn()) {
+  <mat-toolbar>
+    <span>zootter</span>
+  </mat-toolbar>
+}
+<main>
+  <router-outlet />
+</main>
