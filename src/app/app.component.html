@@ -1,8 +1,10 @@
 @if (isLoggedIn()) {
-  <mat-toolbar>
-    <span>zootter</span>
-  </mat-toolbar>
+  <header>
+    <mat-toolbar>
+      <span>zootter</span>
+    </mat-toolbar>
+  </header>
 }
-<main>
+<main [class.logged-in]="isLoggedIn()">
   <router-outlet />
 </main>

@@ -18,8 +18,11 @@ body {
 }
 body {
   margin: 0;
+  box-sizing: border-box;
+
   font-family: "Noto Sans JP", "Helvetica Neue", sans-serif;
   background-image: url("/img/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
