@@ -11,5 +11,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class LoadMoreComponent {
   isLoading = input.required<boolean>();
+  isAllLoaded = input.required<boolean>();
   loadMore = output<void>();
 }

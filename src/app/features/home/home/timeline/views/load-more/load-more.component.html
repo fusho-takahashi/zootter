@@ -1,7 +1,9 @@
-<button mat-flat-button (click)="loadMore.emit()" [disabled]="isLoading()">
-  @if (isLoading()) {
-    <mat-progress-spinner mode="indeterminate" diameter="20" />
-  } @else {
-    もっと見る
-  }
-</button>
+@if (!isAllLoaded()) {
+  <button mat-flat-button (click)="loadMore.emit()" [disabled]="isLoading()">
+    @if (isLoading()) {
+      <mat-progress-spinner mode="indeterminate" diameter="20" />
+    } @else {
+      もっと見る
+    }
+  </button>
+}

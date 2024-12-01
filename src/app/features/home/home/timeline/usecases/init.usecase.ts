@@ -12,6 +12,7 @@ export class InitUsecase {
     this.store.loadingStart();
     const res = await lastValueFrom(postApi.getPosts(0, DEFAULT_TIMELINE_LIMIT));
     this.store.updatePosts(res.posts);
+    this.store.setTotalPostCount(res.totalCount);
     this.store.loadingEnd();
   }
 }

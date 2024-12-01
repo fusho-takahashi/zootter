@@ -20,6 +20,7 @@ export class TimelineComponent implements OnInit {
   posts = this.store.state.posts;
   isLoading = this.store.state.loading;
   initLoading = this.store.state.initLoading;
+  isAllLoaded = this.store.state.isAllLoaded;
 
   ngOnInit() {
     this.usecases.init.execute();

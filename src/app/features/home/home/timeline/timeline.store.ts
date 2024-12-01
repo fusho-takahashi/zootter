@@ -11,10 +11,11 @@ export interface Post {
 @Injectable()
 export class TimelineStore {
   private posts = signal<Post[]>([]);
+  private totalPostCount = signal<number>(0);
   private loading = signal<boolean>(false);
 
   updatePosts = (posts: Post[]) => this.posts.update((prev) => [...prev, ...posts]);
-
+  setTotalPostCount = (count: number) => this.totalPostCount.set(count);
   loadingStart = () => this.loading.set(true);
   loadingEnd = () => this.loading.set(false);
 
@@ -23,5 +24,6 @@ export class TimelineStore {
     postCount: computed(() => this.posts().length),
     loading: this.loading.asReadonly(),
     initLoading: computed(() => this.loading() && this.posts().length === 0),
+    isAllLoaded: computed(() => this.posts().length >= this.totalPostCount()),
   };
 }

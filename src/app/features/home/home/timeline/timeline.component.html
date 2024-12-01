@@ -2,5 +2,9 @@
 @if (initLoading()) {
   <app-page-loader />
 } @else {
-  <app-load-more [isLoading]="isLoading()" (loadMore)="loadMore()" />
+  <app-load-more
+    [isLoading]="isLoading()"
+    [isAllLoaded]="isAllLoaded()"
+    (loadMore)="loadMore()"
+  />
 }

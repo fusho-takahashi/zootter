@@ -13,6 +13,7 @@ export class LoadMoreUsecase {
     this.store.loadingStart();
     const res = await lastValueFrom(postApi.getPosts(offset, DEFAULT_TIMELINE_LIMIT));
     this.store.updatePosts(res.posts);
+    this.store.setTotalPostCount(res.totalCount);
     this.store.loadingEnd();
   }
 }
