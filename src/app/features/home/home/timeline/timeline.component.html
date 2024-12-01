@@ -1,1 +1,6 @@
-<app-post-list [posts]="posts()"></app-post-list>
+<app-post-list [posts]="posts()" />
+@if (initLoading()) {
+  <app-page-loader />
+} @else {
+  <app-load-more [isLoading]="isLoading()" (loadMore)="loadMore()" />
+}

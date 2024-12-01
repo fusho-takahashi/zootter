@@ -5,12 +5,13 @@ import { DEFAULT_TIMELINE_LIMIT } from '../../../../../domain/constants/constant
 import { TimelineStore } from '../timeline.store';
 
 @Injectable()
-export class InitUsecase {
+export class LoadMoreUsecase {
   private readonly store = inject(TimelineStore);
 
   async execute(): Promise<void> {
+    const offset = this.store.state.postCount();
     this.store.loadingStart();
-    const res = await lastValueFrom(postApi.getPosts(0, DEFAULT_TIMELINE_LIMIT));
+    const res = await lastValueFrom(postApi.getPosts(offset, DEFAULT_TIMELINE_LIMIT));
     this.store.updatePosts(res.posts);
     this.store.loadingEnd();
   }

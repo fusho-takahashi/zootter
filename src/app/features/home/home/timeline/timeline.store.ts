@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 export interface Post {
   id: string;
@@ -13,13 +13,15 @@ export class TimelineStore {
   private posts = signal<Post[]>([]);
   private loading = signal<boolean>(false);
 
-  updatePosts = (posts: Post[]) => this.posts.set(posts);
+  updatePosts = (posts: Post[]) => this.posts.update((prev) => [...prev, ...posts]);
 
   loadingStart = () => this.loading.set(true);
   loadingEnd = () => this.loading.set(false);
 
   state = {
     posts: this.posts.asReadonly(),
+    postCount: computed(() => this.posts().length),
     loading: this.loading.asReadonly(),
+    initLoading: computed(() => this.loading() && this.posts().length === 0),
   };
 }
