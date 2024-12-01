@@ -1,3 +1,13 @@
+@use "@angular/material" as mat;
+
+:host {
+  @include mat.divider-overrides(
+    (
+      color: var(--mat-sys-surface-container-high),
+    )
+  );
+}
+
 header {
   position: fixed;
   top: 0;
