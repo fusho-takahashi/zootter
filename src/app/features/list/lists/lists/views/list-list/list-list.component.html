@@ -1,0 +1,11 @@
+<mat-nav-list>
+  @for (list of lists(); track list.id) {
+    <mat-list-item [routerLink]="['/lists', list.id]">
+      <mat-icon matListItemIcon>list</mat-icon>
+      <h3 matListItemTitle>{{ list.name }}</h3>
+      <p matListItemLine>
+        {{ list.animals.length }} member{{ list.animals.length > 0 ? "s" : "" }}
+      </p>
+    </mat-list-item>
+  }
+</mat-nav-list>
