@@ -1,3 +1,1 @@
-@for (post of posts(); track post.id) {
-  <p>{{ post.text }}</p>
-}
+<app-post-list [posts]="posts()"></app-post-list>

@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { TimelineStore } from './timeline.store';
 import { InjectUsecases, provideUsecases } from './usecases';
+import { PostListComponent } from './views/post-list/post-list.component';
 
 @Component({
   selector: 'app-timeline',
-  imports: [],
+  imports: [PostListComponent],
   providers: [provideUsecases(), TimelineStore],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',

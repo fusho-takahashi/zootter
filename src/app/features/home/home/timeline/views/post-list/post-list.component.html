@@ -1,0 +1,8 @@
+@for (post of posts(); track post.id) {
+  <app-post
+    [authorId]="post.authorId"
+    [authorName]="post.authorName"
+    [createdAt]="post.createdAt"
+    [text]="post.text"
+  />
+}

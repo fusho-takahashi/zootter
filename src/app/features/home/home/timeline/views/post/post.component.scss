@@ -1,0 +1,12 @@
+@use "@angular/material" as mat;
+
+:host {
+  display: block;
+  @include mat.card-overrides(
+    (
+      title-text-size: var(--mat-sys-title-medium-size),
+      subtitle-text-size: var(--mat-sys-title-small-size),
+      subtitle-text-color: var(--mat-sys-on-surface-variant),
+    )
+  );
+}

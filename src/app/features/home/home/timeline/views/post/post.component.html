@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      src="/img/animals/{{ authorId() }}.webp"
+      alt="Photo of {{ authorName() }}"
+    />
+    <mat-card-title
+      >{{ authorName() }} <span>&#64;{{ authorId() }}</span></mat-card-title
+    >
+    <mat-card-subtitle>{{
+      createdAt() | date: "yyyy-MM-dd HH:mm"
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{ text() }}</mat-card-content>
+</mat-card>
