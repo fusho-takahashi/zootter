@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more.component';
+import { PageLoaderComponent } from '../../../../shared/ui/page-loader/page-loader.component';
 import { PostListComponent } from '../../../../shared/ui/post-list/post-list.component';
 import { TimelineStore } from './timeline.store';
 import { InjectUsecases, provideUsecases } from './usecases';
-import { PageLoaderComponent } from './views/page-loader/page-loader.component';
 
 @Component({
   selector: 'app-timeline',
