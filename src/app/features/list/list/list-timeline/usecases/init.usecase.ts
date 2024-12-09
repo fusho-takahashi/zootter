@@ -12,7 +12,6 @@ export class InitUsecase {
     this.store.setListId(listId);
     this.store.loadingStart();
     const res = await lastValueFrom(listApi.getListPosts(listId, 0, DEFAULT_TIMELINE_LIMIT));
-    console.log(res);
     this.store.updatePosts(res.posts);
     this.store.setTotalPostCount(res.totalCount);
     this.store.loadingEnd();
