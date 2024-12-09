@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Post } from '../../timeline.store';
-import { PostComponent } from '../post/post.component';
+import { PostComponent, PostVM } from '../post/post.component';
 
 @Component({
   selector: 'app-post-list',
@@ -10,5 +9,5 @@ import { PostComponent } from '../post/post.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostListComponent {
-  posts = input.required<Post[]>();
+  posts = input.required<PostVM[]>();
 }

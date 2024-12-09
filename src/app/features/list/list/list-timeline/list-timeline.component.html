@@ -1,1 +1,8 @@
-<p>list-timeline works!</p>
+@if (!initLoading()) {
+  <app-post-list [posts]="posts()" />
+  <app-load-more
+    [isLoading]="isLoading()"
+    [isAllLoaded]="isAllLoaded()"
+    (loadMore)="loadMore()"
+  />
+}
