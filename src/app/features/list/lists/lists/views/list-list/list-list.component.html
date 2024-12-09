@@ -1,6 +1,6 @@
 <mat-nav-list>
   @for (list of lists(); track list.id) {
-    <mat-list-item [routerLink]="['/lists', list.id]">
+    <mat-list-item [routerLink]="['/list', list.id]">
       <mat-icon matListItemIcon>list</mat-icon>
       <h3 matListItemTitle>{{ list.name }}</h3>
       <p matListItemLine>

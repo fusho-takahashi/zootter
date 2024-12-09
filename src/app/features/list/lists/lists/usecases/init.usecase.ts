@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { listApi } from '../../../../../../../api/list';
-import { ListsStore } from '../../../lists.store';
+import { listApi } from '../../../../../api/list';
+import { ListsStore } from '../lists.store';
 
 @Injectable()
 export class InitUsecase {

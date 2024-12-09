@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ListsStore } from './lists.store';
+import { InjectUsecases, provideUsecases } from './usecases';
 import { ListListComponent } from './views/list-list/list-list.component';
-import { InjectUsecases, provideUsecases } from './views/list-list/usecases';
 
 @Component({
   selector: 'app-lists',
