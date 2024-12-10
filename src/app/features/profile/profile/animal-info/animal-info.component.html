@@ -1,0 +1,8 @@
+@if (isReady()) {
+  <app-animal-info-card
+    [id]="animalInfo().id"
+    [name]="animalInfo().name"
+    [description]="animalInfo().description"
+    (goBack)="goBack.emit()"
+  />
+}

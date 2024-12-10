@@ -3,7 +3,7 @@ import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more.com
 import { PageLoaderComponent } from '../../../../shared/ui/page-loader/page-loader.component';
 import { PostListComponent } from '../../../../shared/ui/post-list/post-list.component';
 import { TimelineStore } from './timeline.store';
-import { InjectUsecases, provideUsecases } from './usecases';
+import { injectUsecases, provideUsecases } from './usecases';
 
 @Component({
   selector: 'app-timeline',
@@ -14,7 +14,7 @@ import { InjectUsecases, provideUsecases } from './usecases';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimelineComponent implements OnInit {
-  private readonly usecases = InjectUsecases();
+  private readonly usecases = injectUsecases();
   private readonly store = inject(TimelineStore);
 
   posts = this.store.state.posts;

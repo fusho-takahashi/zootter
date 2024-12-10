@@ -6,6 +6,9 @@
       color: var(--mat-sys-surface-container-high),
     )
   );
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {

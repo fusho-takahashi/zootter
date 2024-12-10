@@ -1,13 +1,13 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  OnInit,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+    inject,
+    OnInit,
+    signal,
 } from '@angular/core';
 import { LoginStore } from './login.store';
-import { InjectUsecases, provideUsecases } from './usecases';
+import { injectUsecases, provideUsecases } from './usecases';
 import { AnimalSelectComponent } from './views/animal-select/animal-select.component';
 import { HeroHeaderComponent } from './views/hero-header/hero-header.component';
 
@@ -20,7 +20,7 @@ import { HeroHeaderComponent } from './views/hero-header/hero-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  usecases = InjectUsecases();
+  usecases = injectUsecases();
   store = inject(LoginStore);
 
   selectedAnimalId = signal<string[]>([]);

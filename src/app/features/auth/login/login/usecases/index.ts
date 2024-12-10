@@ -6,7 +6,7 @@ export function provideUsecases() {
   return [InitUsecase, LoginUsecase];
 }
 
-export function InjectUsecases() {
+export function injectUsecases() {
   return {
     init: inject(InitUsecase),
     login: inject(LoginUsecase),

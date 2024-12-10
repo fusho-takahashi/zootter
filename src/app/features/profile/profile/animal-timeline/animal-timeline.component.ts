@@ -1,22 +1,22 @@
 import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
 import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more.component';
 import { PostListComponent } from '../../../../shared/ui/post-list/post-list.component';
-import { ListTimelineStore } from './list-timeline.store';
+import { AnimalTimelineStore } from './animal-timeline.store';
 import { injectUsecases, provideUsecases } from './usecases';
 
 @Component({
-  selector: 'app-list-timeline',
+  selector: 'app-animal-timeline',
   imports: [PostListComponent, LoadMoreComponent],
-  providers: [provideUsecases(), ListTimelineStore],
-  templateUrl: './list-timeline.component.html',
-  styleUrl: './list-timeline.component.scss',
+  providers: [provideUsecases(), AnimalTimelineStore],
+  templateUrl: './animal-timeline.component.html',
+  styleUrl: './animal-timeline.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListTimelineComponent implements OnInit {
-  listId = input.required<string>();
+export class AnimalTimelineComponent implements OnInit {
+  readonly animalId = input.required<string>();
 
   private readonly usecases = injectUsecases();
-  private readonly store = inject(ListTimelineStore);
+  private readonly store = inject(AnimalTimelineStore);
 
   posts = this.store.state.posts;
   isLoading = this.store.state.loading;
@@ -24,7 +24,7 @@ export class ListTimelineComponent implements OnInit {
   isAllLoaded = this.store.state.isAllLoaded;
 
   ngOnInit() {
-    this.usecases.init.execute(this.listId());
+    this.usecases.init.execute(this.animalId());
   }
 
   loadMore() {

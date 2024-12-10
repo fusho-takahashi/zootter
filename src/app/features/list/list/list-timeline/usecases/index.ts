@@ -6,7 +6,7 @@ export function provideUsecases() {
   return [InitUsecase, LoadMoreUsecase];
 }
 
-export function InjectUsecases() {
+export function injectUsecases() {
   return {
     init: inject(InitUsecase),
     loadMore: inject(LoadMoreUsecase),

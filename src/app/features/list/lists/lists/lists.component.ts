@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { PageLoaderComponent } from '../../../../shared/ui/page-loader/page-loader.component';
 import { ListsStore } from './lists.store';
-import { InjectUsecases, provideUsecases } from './usecases';
+import { injectUsecases, provideUsecases } from './usecases';
 import { ListListComponent } from './views/list-list/list-list.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { ListListComponent } from './views/list-list/list-list.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListsComponent implements OnInit {
-  private readonly usecases = InjectUsecases();
+  private readonly usecases = injectUsecases();
   private readonly store = inject(ListsStore);
 
   lists = this.store.state.lists;

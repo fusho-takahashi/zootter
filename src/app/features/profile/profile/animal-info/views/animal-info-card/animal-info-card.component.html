@@ -1,0 +1,19 @@
+<mat-card appearance="outlined">
+  <button mat-icon-button (click)="goBack.emit()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <button mat-icon-button class="menu">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+  <mat-card-header />
+  <mat-card-content>
+    <img
+      mat-card-avatar
+      src="/img/animals/{{ id() }}.webp"
+      alt="Photo of {{ name() }}"
+    />
+    <h2>{{ name() }}</h2>
+    <p>&#64;{{ id() }}</p>
+    <p>{{ description() }}</p>
+  </mat-card-content>
+</mat-card>

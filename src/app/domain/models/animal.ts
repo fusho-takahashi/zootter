@@ -6,3 +6,9 @@ export interface GetAnimalsResponseAnimal {
 export interface GetAnimalsResponse {
   animals: GetAnimalsResponseAnimal[];
 }
+
+export interface GetAnimalDetailResponse {
+  id: string;
+  name: string;
+  description: string;
+}

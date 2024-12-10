@@ -11,6 +11,6 @@ import { ListTimelineComponent } from './list-timeline/list-timeline.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListPageComponent {
-  route = inject(ActivatedRoute);
+  private readonly route = inject(ActivatedRoute);
   listId = this.route.snapshot.params['id'];
 }

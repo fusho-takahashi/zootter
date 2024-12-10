@@ -1,0 +1,50 @@
+@use "@angular/material" as mat;
+
+:host {
+  width: 100%;
+  display: block;
+}
+
+mat-card {
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  @include mat.card-overrides(
+    (
+      outlined-outline-color: var(--mat-sys-primary),
+    )
+  );
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: var();
+}
+
+h2 {
+  font: var(--mat-sys-title-large);
+  margin: unset;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+p {
+  font: var(--mat-sys-title-small);
+  margin: unset;
+}
+
+button {
+  position: absolute;
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-on-primary),
+    )
+  );
+}
+
+button.menu {
+  right: 0;
+}
