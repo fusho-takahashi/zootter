@@ -9,8 +9,11 @@ export class InitUsecase {
 
   async execute(): Promise<void> {
     this.store.loadingStart();
-    const res = await lastValueFrom(listApi.getLists());
-    this.store.setLists(res.lists);
-    this.store.loadingEnd();
+    try {
+      const res = await lastValueFrom(listApi.getLists());
+      this.store.setLists(res.lists);
+    } finally {
+      this.store.loadingEnd();
+    }
   }
 }

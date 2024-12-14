@@ -23,8 +23,6 @@ export class InitUsecase {
     try {
       const res = await lastValueFrom(animalApi.getAnimalDetail(id));
       this.store.setAnimalInfo(res);
-    } catch (e) {
-      console.error(e);
     } finally {
       this.store.loadingEnd();
     }

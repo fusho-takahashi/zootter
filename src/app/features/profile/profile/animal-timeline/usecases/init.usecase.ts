@@ -25,8 +25,6 @@ export class InitUsecase {
       const res = await lastValueFrom(animalApi.getAnimalPosts(id, 0, DEFAULT_TIMELINE_LIMIT));
       this.store.updatePosts(res.posts);
       this.store.setTotalPostCount(res.totalCount);
-    } catch (e) {
-      console.error(e);
     } finally {
       this.store.loadingEnd();
     }

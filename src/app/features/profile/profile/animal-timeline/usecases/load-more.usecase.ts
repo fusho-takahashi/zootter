@@ -12,9 +12,14 @@ export class LoadMoreUsecase {
     const animalId = this.store.state.animalId();
     const offset = this.store.state.postCount();
     this.store.loadingStart();
-    const res = await lastValueFrom(listApi.getListPosts(animalId, offset, DEFAULT_TIMELINE_LIMIT));
-    this.store.updatePosts(res.posts);
-    this.store.setTotalPostCount(res.totalCount);
-    this.store.loadingEnd();
+    try {
+      const res = await lastValueFrom(
+        listApi.getListPosts(animalId, offset, DEFAULT_TIMELINE_LIMIT),
+      );
+      this.store.updatePosts(res.posts);
+      this.store.setTotalPostCount(res.totalCount);
+    } finally {
+      this.store.loadingEnd();
+    }
   }
 }

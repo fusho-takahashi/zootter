@@ -9,8 +9,11 @@ export class InitUsecase {
 
   async execute(): Promise<void> {
     this.store.animalLoadingStart();
-    const res = await lastValueFrom(animalApi.getAnimals());
-    this.store.setAnimals(res.animals);
-    this.store.animalLoadingEnd();
+    try {
+      const res = await lastValueFrom(animalApi.getAnimals());
+      this.store.setAnimals(res.animals);
+    } finally {
+      this.store.animalLoadingEnd();
+    }
   }
 }

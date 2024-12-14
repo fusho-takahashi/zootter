@@ -11,9 +11,12 @@ export class InitUsecase {
   async execute(listId: string): Promise<void> {
     this.store.setListId(listId);
     this.store.loadingStart();
-    const res = await lastValueFrom(listApi.getListPosts(listId, 0, DEFAULT_TIMELINE_LIMIT));
-    this.store.updatePosts(res.posts);
-    this.store.setTotalPostCount(res.totalCount);
-    this.store.loadingEnd();
+    try {
+      const res = await lastValueFrom(listApi.getListPosts(listId, 0, DEFAULT_TIMELINE_LIMIT));
+      this.store.updatePosts(res.posts);
+      this.store.setTotalPostCount(res.totalCount);
+    } finally {
+      this.store.loadingEnd();
+    }
   }
 }

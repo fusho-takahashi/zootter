@@ -12,8 +12,6 @@ export class InitUsecase {
     try {
       const res = await lastValueFrom(listApi.getListDetail(listId));
       this.store.setListInfo(res);
-    } catch (e) {
-      console.error(e);
     } finally {
       this.store.loadingEnd();
     }
