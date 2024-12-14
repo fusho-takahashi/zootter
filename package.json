@@ -8,7 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy --base-href=/zootter/"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "19.0.0",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
