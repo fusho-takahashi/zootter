@@ -19,9 +19,14 @@ export class AnimalInfoComponent implements OnInit {
   private readonly store = inject(AnimalInfoStore);
 
   animalInfo = this.store.state.animalInfo;
+  isMyInfo = this.store.state.isMyInfo;
   isReady = this.store.state.isReady;
 
   ngOnInit() {
     this.usecases.init.execute(this.animalId());
+  }
+
+  logout() {
+    this.usecases.logout.execute();
   }
 }

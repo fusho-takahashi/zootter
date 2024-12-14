@@ -8,6 +8,10 @@ export class AuthStore {
     this.animalId.set(animal);
   }
 
+  logout() {
+    this.animalId.set('');
+  }
+
   state = {
     isLoggedIn: computed(() => this.animalId().length > 0),
     animal: this.animalId.asReadonly(),

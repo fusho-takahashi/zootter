@@ -42,15 +42,15 @@ p {
   margin: unset;
 }
 
-button {
+button.header-action {
   position: absolute;
   @include mat.icon-button-overrides(
     (
       icon-color: var(--mat-sys-on-primary),
     )
   );
-}
 
-button.menu {
-  right: 0;
+  &.menu {
+    right: 0;
+  }
 }

@@ -3,6 +3,8 @@
     [id]="animalInfo().id"
     [name]="animalInfo().name"
     [description]="animalInfo().description"
+    [isMyInfo]="isMyInfo()"
     (goBack)="goBack.emit()"
+    (logout)="logout()"
   />
 }
