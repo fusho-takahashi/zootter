@@ -1,5 +1,3 @@
-@if (isLoading()) {
-  <app-page-loader />
-} @else {
+@if (isReady()) {
   <app-list-list [lists]="lists()" />
 }

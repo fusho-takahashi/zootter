@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { PageLoaderComponent } from '../../../../shared/ui/page-loader/page-loader.component';
 import { ListsStore } from './lists.store';
 import { injectUsecases, provideUsecases } from './usecases';
 import { ListListComponent } from './views/list-list/list-list.component';
 
 @Component({
   selector: 'app-lists',
-  imports: [ListListComponent, PageLoaderComponent],
+  imports: [ListListComponent],
   providers: [provideUsecases(), ListsStore],
   templateUrl: './lists.component.html',
   styleUrl: './lists.component.scss',
@@ -17,7 +16,7 @@ export class ListsComponent implements OnInit {
   private readonly store = inject(ListsStore);
 
   lists = this.store.state.lists;
-  isLoading = this.store.state.isLoading;
+  isReady = this.store.state.isReady;
 
   ngOnInit() {
     this.usecases.init.execute();

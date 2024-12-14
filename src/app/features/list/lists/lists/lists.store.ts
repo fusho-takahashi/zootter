@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 export interface List {
   id: string;
@@ -18,6 +18,6 @@ export class ListsStore {
 
   state = {
     lists: this.lists.asReadonly(),
-    isLoading: this.isLoading.asReadonly(),
+    isReady: computed(() => !this.isLoading()),
   };
 }

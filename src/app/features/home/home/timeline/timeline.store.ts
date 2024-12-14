@@ -23,7 +23,6 @@ export class TimelineStore {
     posts: this.posts.asReadonly(),
     postCount: computed(() => this.posts().length),
     loading: this.loading.asReadonly(),
-    initLoading: computed(() => this.loading() && this.posts().length === 0),
     isAllLoaded: computed(() => this.posts().length >= this.totalPostCount()),
   };
 }
