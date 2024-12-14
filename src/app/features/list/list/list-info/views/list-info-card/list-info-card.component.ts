@@ -13,5 +13,6 @@ import { RouterLink } from '@angular/router';
 })
 export class ListInfoCardComponent {
   name = input.required<string>();
+  animals = input.required<string[]>();
   description = input.required<string>();
 }

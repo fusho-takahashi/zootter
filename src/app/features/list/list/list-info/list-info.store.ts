@@ -3,12 +3,14 @@ import { computed, Injectable, signal } from '@angular/core';
 export interface ListInfo {
   id: string;
   name: string;
+  animals: string[];
   description: string;
 }
 
 const skeletonListInfo: ListInfo = {
   id: '',
   name: '',
+  animals: [],
   description: '',
 };
 

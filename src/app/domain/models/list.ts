@@ -13,5 +13,6 @@ export interface GetListsResponse {
 export interface GetListDetailResponse {
   id: string;
   name: string;
+  animals: string[];
   description: string;
 }

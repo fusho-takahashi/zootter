@@ -15,6 +15,7 @@ function getListDetail(listId: string): Observable<GetListDetailResponse> {
     return of({
       id: targetList.id,
       name: targetList.name,
+      animals: targetList.animals,
       description: targetList.description,
     }).pipe(delay(500));
   } else {

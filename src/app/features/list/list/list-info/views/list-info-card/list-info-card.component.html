@@ -5,6 +5,16 @@
   <mat-card-header />
   <mat-card-content>
     <h2><mat-icon>list</mat-icon>{{ name() }}</h2>
+    <div class="animal-images">
+      @for (animal of animals(); track animal) {
+        <img
+          src="/img/animals/{{ animal }}.webp"
+          alt="Photo of {{ animal }}"
+          width="32"
+          height="32"
+        />
+      }
+    </div>
     <p>{{ description() }}</p>
   </mat-card-content>
 </mat-card>
