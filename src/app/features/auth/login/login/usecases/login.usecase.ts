@@ -1,5 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
+import { authApi } from '../../../../../api/auth';
 import { AuthStore } from '../../../../../core/auth/auth.store';
 import { LoginStore } from '../login.store';
 
@@ -11,8 +13,7 @@ export class LoginUsecase {
 
   async execute(animalId: string): Promise<void> {
     this.store.loginLoadingStart();
-    // Simulate a login request
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await lastValueFrom(authApi.login(animalId));
     this.authStore.setAnimal(animalId);
     this.router.navigateByUrl('/home');
   }

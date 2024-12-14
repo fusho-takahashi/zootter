@@ -2,7 +2,7 @@ import { computed, Inject, signal } from '@angular/core';
 
 @Inject({ providedIn: 'root' })
 export class AuthStore {
-  private animalId = signal<string>('araiguma');
+  private animalId = signal<string>('');
 
   setAnimal(animal: string) {
     this.animalId.set(animal);
