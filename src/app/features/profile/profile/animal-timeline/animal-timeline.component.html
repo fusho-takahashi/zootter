@@ -1,8 +1,13 @@
-@if (!initLoading()) {
-  <app-post-list [posts]="posts()" />
+@let initLoading = state.initLoading();
+@let posts = state.posts();
+@let isLoading = state.loading();
+@let isAllLoaded = state.isAllLoaded();
+
+@if (!initLoading) {
+  <app-post-list [posts]="posts" />
   <app-load-more
-    [isLoading]="isLoading()"
-    [isAllLoaded]="isAllLoaded()"
+    [isLoading]="isLoading"
+    [isAllLoaded]="isAllLoaded"
     (loadMore)="loadMore()"
   />
 }

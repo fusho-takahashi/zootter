@@ -1,4 +1,6 @@
-@if (isLoggedIn()) {
+@let isLoggedIn = authState.isLoggedIn();
+
+@if (isLoggedIn) {
   <header>
     <mat-toolbar>
       <span>zootter</span>

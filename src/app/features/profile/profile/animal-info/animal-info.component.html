@@ -1,9 +1,15 @@
-@if (isReady()) {
+@let isReady = state.isReady();
+@let id = state.animalInfo().id;
+@let name = state.animalInfo().name;
+@let description = state.animalInfo().description;
+@let isMyInfo = state.isMyInfo();
+
+@if (isReady) {
   <app-animal-info-card
-    [id]="animalInfo().id"
-    [name]="animalInfo().name"
-    [description]="animalInfo().description"
-    [isMyInfo]="isMyInfo()"
+    [id]="id"
+    [name]="name"
+    [description]="description"
+    [isMyInfo]="isMyInfo"
     (goBack)="goBack.emit()"
     (logout)="logout()"
   />

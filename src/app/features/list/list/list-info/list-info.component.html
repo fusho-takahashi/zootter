@@ -1,6 +1,7 @@
-@if (isReady()) {
-  <app-list-info-card
-    [name]="listInfo().name"
-    [description]="listInfo().description"
-  />
+@let isReady = state.isReady();
+@let name = state.listInfo().name;
+@let description = state.listInfo().description;
+
+@if (isReady) {
+  <app-list-info-card [name]="name" [description]="description" />
 }

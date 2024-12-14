@@ -1,10 +1,14 @@
+@let isLoggingIn = state.loginLoading();
+@let animals = state.animals();
+@let isAnimalLoading = state.animalLoading();
+
 <app-hero-header
   [canLogin]="canLogin()"
-  [isLoading]="isLoggingIn()"
+  [isLoading]="isLoggingIn"
   (login)="login()"
 />
 <app-animal-select
-  [animals]="animals()"
-  [isLoading]="isAnimalsLoading()"
+  [animals]="animals"
+  [isLoading]="isAnimalLoading"
   [(selectedAnimalId)]="selectedAnimalId"
 />

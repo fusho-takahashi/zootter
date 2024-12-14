@@ -13,10 +13,7 @@ import { ListListComponent } from './views/list-list/list-list.component';
 })
 export class ListsComponent implements OnInit {
   private readonly usecases = injectUsecases();
-  private readonly store = inject(ListsStore);
-
-  lists = this.store.state.lists;
-  isReady = this.store.state.isReady;
+  readonly state = inject(ListsStore).state;
 
   ngOnInit() {
     this.usecases.init.execute();

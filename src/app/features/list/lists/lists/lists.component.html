@@ -1,3 +1,6 @@
-@if (isReady()) {
-  <app-list-list [lists]="lists()" />
+@let isReady = state.isReady();
+@let lists = state.lists();
+
+@if (isReady) {
+  <app-list-list [lists]="lists" />
 }

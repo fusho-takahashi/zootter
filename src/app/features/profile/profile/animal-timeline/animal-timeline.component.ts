@@ -16,12 +16,7 @@ export class AnimalTimelineComponent implements OnInit {
   readonly animalId = input.required<string>();
 
   private readonly usecases = injectUsecases();
-  private readonly store = inject(AnimalTimelineStore);
-
-  posts = this.store.state.posts;
-  isLoading = this.store.state.loading;
-  initLoading = this.store.state.initLoading;
-  isAllLoaded = this.store.state.isAllLoaded;
+  readonly state = inject(AnimalTimelineStore).state;
 
   ngOnInit() {
     this.usecases.init.execute(this.animalId());

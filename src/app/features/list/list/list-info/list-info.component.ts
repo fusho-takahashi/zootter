@@ -14,10 +14,7 @@ import { ListInfoCardComponent } from './views/list-info-card/list-info-card.com
 export class ListInfoComponent implements OnInit {
   listId = input.required<string>();
   private readonly usecases = injectUsecases();
-  private readonly store = inject(ListInfoStore);
-
-  isReady = this.store.state.isReady;
-  listInfo = this.store.state.listInfo;
+  readonly state = inject(ListInfoStore).state;
 
   ngOnInit() {
     this.usecases.init.execute(this.listId());

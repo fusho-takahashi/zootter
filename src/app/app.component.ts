@@ -14,9 +14,7 @@ import { injectUsecases, provideUsecases } from './core/usecases';
 })
 export class AppComponent implements OnInit {
   private readonly usecases = injectUsecases();
-  private readonly authStore = inject(AuthStore);
-
-  isLoggedIn = this.authStore.state.isLoggedIn;
+  readonly authState = inject(AuthStore).state;
 
   links = signal<string[]>(['home', 'list', 'profile']);
 

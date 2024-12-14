@@ -14,11 +14,7 @@ import { injectUsecases, provideUsecases } from './usecases';
 })
 export class TimelineComponent implements OnInit {
   private readonly usecases = injectUsecases();
-  private readonly store = inject(TimelineStore);
-
-  posts = this.store.state.posts;
-  isLoading = this.store.state.loading;
-  isAllLoaded = this.store.state.isAllLoaded;
+  readonly state = inject(TimelineStore).state;
 
   ngOnInit() {
     this.usecases.init.execute();
