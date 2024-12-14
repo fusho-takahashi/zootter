@@ -16,12 +16,21 @@ header {
   background-color: var(--mat-sys-surface);
 }
 
+mat-toolbar,
+nav {
+  max-width: var(--app-max-width);
+  margin: 0 auto;
+}
+
 a {
   text-transform: capitalize;
 }
 
 main {
+  width: 100%;
+  max-width: var(--app-max-width);
   height: 100%;
+  margin: 0 auto;
   &.logged-in {
     margin-top: calc(var(--app-header-height) + var(--app-nav-height));
   }
