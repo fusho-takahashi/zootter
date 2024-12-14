@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input, OnInit, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
 import { AnimalInfoStore } from './animal-info.store';
 import { injectUsecases, provideUsecases } from './usecases';
 import { AnimalInfoCardComponent } from './views/animal-info-card/animal-info-card.component';
@@ -13,7 +13,6 @@ import { AnimalInfoCardComponent } from './views/animal-info-card/animal-info-ca
 })
 export class AnimalInfoComponent implements OnInit {
   animalId = input.required<string | undefined>();
-  goBack = output<void>();
 
   private readonly usecases = injectUsecases();
   readonly state = inject(AnimalInfoStore).state;

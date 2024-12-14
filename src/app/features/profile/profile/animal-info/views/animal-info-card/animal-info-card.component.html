@@ -1,9 +1,5 @@
 <mat-card appearance="outlined">
-  @if (!isMyInfo()) {
-    <button mat-icon-button (click)="goBack.emit()" class="header-action">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-  } @else {
+  @if (isMyInfo()) {
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"

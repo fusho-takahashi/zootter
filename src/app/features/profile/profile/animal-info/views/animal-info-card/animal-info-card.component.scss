@@ -8,6 +8,7 @@
 mat-card {
   background-color: var(--mat-sys-primary);
   color: var(--mat-sys-on-primary);
+
   @include mat.card-overrides(
     (
       outlined-outline-color: var(--mat-sys-primary),
@@ -44,13 +45,11 @@ p {
 
 button.header-action {
   position: absolute;
+  right: 0;
+
   @include mat.icon-button-overrides(
     (
       icon-color: var(--mat-sys-on-primary),
     )
   );
-
-  &.menu {
-    right: 0;
-  }
 }

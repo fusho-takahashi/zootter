@@ -17,6 +17,5 @@ export class AnimalInfoCardComponent {
   description = input.required<string>();
   isMyInfo = input.required<boolean>();
 
-  goBack = output<void>();
   logout = output<void>();
 }
