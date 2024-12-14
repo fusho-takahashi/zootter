@@ -3,7 +3,7 @@
 @if (isLoggedIn) {
   <header>
     <mat-toolbar>
-      <span>zootter</span>
+      <a [routerLink]="'/home'">zootter</a>
     </mat-toolbar>
     <nav mat-tab-nav-bar [tabPanel]="tabGroup" [fitInkBarToContent]="true">
       @for (link of links(); track link) {
