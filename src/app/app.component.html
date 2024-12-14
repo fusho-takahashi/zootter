@@ -3,9 +3,28 @@
     <mat-toolbar>
       <span>zootter</span>
     </mat-toolbar>
-    <mat-divider />
+    <nav mat-tab-nav-bar [tabPanel]="tabGroup" [fitInkBarToContent]="true">
+      @for (link of links(); track link) {
+        <a
+          mat-tab-link
+          [routerLink]="link"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [active]="rla.isActive"
+        >
+          {{ link }}
+        </a>
+      }
+    </nav>
   </header>
+
+  <main class="logged-in">
+    <mat-tab-nav-panel #tabGroup>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </main>
+} @else {
+  <main>
+    <router-outlet />
+  </main>
 }
-<main [class.logged-in]="isLoggedIn()">
-  <router-outlet />
-</main>

@@ -1,11 +1,6 @@
 @use "@angular/material" as mat;
 
 :host {
-  @include mat.divider-overrides(
-    (
-      color: var(--mat-sys-surface-container-high),
-    )
-  );
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -17,11 +12,17 @@ header {
   left: 0;
   right: 0;
   z-index: 1;
+
+  background-color: var(--mat-sys-surface);
+}
+
+a {
+  text-transform: capitalize;
 }
 
 main {
   height: 100%;
   &.logged-in {
-    margin-top: 56px;
+    margin-top: calc(var(--app-header-height) + var(--app-nav-height));
   }
 }
