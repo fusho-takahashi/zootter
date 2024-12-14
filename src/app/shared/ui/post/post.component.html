@@ -1,10 +1,12 @@
 <mat-card appearance="outlined">
   <mat-card-header>
-    <img
-      mat-card-avatar
-      src="/img/animals/{{ authorId() }}.webp"
-      alt="Photo of {{ authorName() }}"
-    />
+    <a mat-card-avatar [routerLink]="['/profile', authorId()]">
+      <img
+        mat-card-avatar
+        src="/img/animals/{{ authorId() }}.webp"
+        alt="Photo of {{ authorName() }}"
+      />
+    </a>
     <mat-card-title
       >{{ authorName() }} <span>&#64;{{ authorId() }}</span></mat-card-title
     >

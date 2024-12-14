@@ -15,6 +15,12 @@ mat-card {
   );
 }
 
+img {
+  width: 120px;
+  height: 120px;
+  margin: unset;
+}
+
 mat-card-content {
   display: flex;
   flex-direction: column;

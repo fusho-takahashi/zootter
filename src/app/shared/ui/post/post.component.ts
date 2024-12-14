@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { RouterLink } from '@angular/router';
 
 export interface PostVM {
   id: string;
@@ -12,7 +13,7 @@ export interface PostVM {
 
 @Component({
   selector: 'app-post',
-  imports: [MatCardModule, DatePipe],
+  imports: [MatCardModule, DatePipe, RouterLink],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
