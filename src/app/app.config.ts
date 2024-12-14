@@ -5,7 +5,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
 import { AuthStore } from './core/auth/auth.store';
-import { CustomErrorHandler } from './core/handlers/custom-error-handler';
+import { CustomErrorHandler } from './core/error-handler/custom-error-handler';
 import { loggingInterceptor } from './core/interceptors/logging.interceptor';
 
 export const appConfig: ApplicationConfig = {
