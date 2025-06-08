@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
-import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more.component';
-import { PostListComponent } from '../../../../shared/ui/post-list/post-list.component';
+import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more';
+import { PostListComponent } from '../../../../shared/ui/post-list/post-list';
 import { AnimalTimelineStore } from './animal-timeline.store';
 import { injectUsecases, provideUsecases } from './usecases';
 
@@ -8,8 +8,8 @@ import { injectUsecases, provideUsecases } from './usecases';
   selector: 'app-animal-timeline',
   imports: [PostListComponent, LoadMoreComponent],
   providers: [provideUsecases(), AnimalTimelineStore],
-  templateUrl: './animal-timeline.component.html',
-  styleUrl: './animal-timeline.component.scss',
+  templateUrl: './animal-timeline.html',
+  styleUrl: './animal-timeline.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnimalTimelineComponent implements OnInit {

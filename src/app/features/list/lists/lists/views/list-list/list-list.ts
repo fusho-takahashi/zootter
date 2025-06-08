@@ -7,8 +7,8 @@ import { List } from '../../lists.store';
 @Component({
   selector: 'app-list-list',
   imports: [MatListModule, MatIconModule, RouterLink],
-  templateUrl: './list-list.component.html',
-  styleUrl: './list-list.component.scss',
+  templateUrl: './list-list.html',
+  styleUrl: './list-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListListComponent {

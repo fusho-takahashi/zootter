@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ListsStore } from './lists.store';
 import { injectUsecases, provideUsecases } from './usecases';
-import { ListListComponent } from './views/list-list/list-list.component';
+import { ListListComponent } from './views/list-list/list-list';
 
 @Component({
   selector: 'app-lists',
   imports: [ListListComponent],
   providers: [provideUsecases(), ListsStore],
-  templateUrl: './lists.component.html',
-  styleUrl: './lists.component.scss',
+  templateUrl: './lists.html',
+  styleUrl: './lists.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListsComponent implements OnInit {

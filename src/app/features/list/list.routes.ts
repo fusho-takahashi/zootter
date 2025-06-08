@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ListPageComponent } from './list/list-page.component';
-import { ListsPageComponent } from './lists/lists-page.component';
+import { ListPageComponent } from './list/list-page';
+import { ListsPageComponent } from './lists/lists-page';
 
 export default [
   { path: '', component: ListsPageComponent },

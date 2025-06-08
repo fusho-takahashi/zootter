@@ -7,8 +7,8 @@ import { MatMenuModule } from '@angular/material/menu';
 @Component({
   selector: 'app-animal-info-card',
   imports: [MatCardModule, MatButtonModule, MatIconModule, MatMenuModule],
-  templateUrl: './animal-info-card.component.html',
-  styleUrl: './animal-info-card.component.scss',
+  templateUrl: './animal-info-card.html',
+  styleUrl: './animal-info-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnimalInfoCardComponent {

@@ -7,8 +7,8 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-list-info-card',
   imports: [MatCardModule, MatIconModule, MatButtonModule, RouterLink],
-  templateUrl: './list-info-card.component.html',
-  styleUrl: './list-info-card.component.scss',
+  templateUrl: './list-info-card.html',
+  styleUrl: './list-info-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListInfoCardComponent {
