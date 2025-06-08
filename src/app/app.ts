@@ -9,8 +9,8 @@ import { injectUsecases, provideUsecases } from './core/usecases';
   selector: 'app-root',
   imports: [RouterOutlet, MatToolbar, MatTabsModule, RouterLink, RouterLinkActive],
   providers: [provideUsecases()],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class AppComponent implements OnInit {
   private readonly usecases = injectUsecases();

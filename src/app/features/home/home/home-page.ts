@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TimelineComponent } from './timeline/timeline.component';
+import { TimelineComponent } from './timeline/timeline';
 
 @Component({
   selector: 'app-home-page',
   imports: [TimelineComponent],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss',
+  templateUrl: './home-page.html',
+  styleUrl: './home-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {}

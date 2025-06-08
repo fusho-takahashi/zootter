@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ListInfoComponent } from './list-info/list-info.component';
-import { ListTimelineComponent } from './list-timeline/list-timeline.component';
+import { ListInfoComponent } from './list-info/list-info';
+import { ListTimelineComponent } from './list-timeline/list-timeline';
 
 @Component({
   selector: 'app-list-page',
   imports: [ListInfoComponent, ListTimelineComponent],
-  templateUrl: './list-page.component.html',
-  styleUrl: './list-page.component.scss',
+  templateUrl: './list-page.html',
+  styleUrl: './list-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListPageComponent {

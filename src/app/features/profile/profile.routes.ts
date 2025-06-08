@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ProfilePageComponent } from './profile/profile-page.component';
+import { ProfilePageComponent } from './profile/profile-page';
 
 export default [
   { path: '', component: ProfilePageComponent },

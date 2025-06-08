@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
-import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more.component';
-import { PostListComponent } from '../../../../shared/ui/post-list/post-list.component';
+import { LoadMoreComponent } from '../../../../shared/ui/load-more/load-more';
+import { PostListComponent } from '../../../../shared/ui/post-list/post-list';
 import { ListTimelineStore } from './list-timeline.store';
 import { injectUsecases, provideUsecases } from './usecases';
 
@@ -8,8 +8,8 @@ import { injectUsecases, provideUsecases } from './usecases';
   selector: 'app-list-timeline',
   imports: [PostListComponent, LoadMoreComponent],
   providers: [provideUsecases(), ListTimelineStore],
-  templateUrl: './list-timeline.component.html',
-  styleUrl: './list-timeline.component.scss',
+  templateUrl: './list-timeline.html',
+  styleUrl: './list-timeline.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListTimelineComponent implements OnInit {

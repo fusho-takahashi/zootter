@@ -14,8 +14,8 @@ export interface PostVM {
 @Component({
   selector: 'app-post',
   imports: [MatCardModule, DatePipe, RouterLink],
-  templateUrl: './post.component.html',
-  styleUrl: './post.component.scss',
+  templateUrl: './post.html',
+  styleUrl: './post.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent {
